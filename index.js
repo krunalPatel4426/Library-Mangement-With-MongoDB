@@ -8,8 +8,9 @@ const PORT = 8081;
 dotenv.config();
 dbConnection();
 const bookRoot = require("./roots/bookRoots.js");
-
+const userRoot = require("./roots/userRoots.js");
 app.use("/books", bookRoot);
+app.use("/users", userRoot);
 app.listen(PORT, () => {
     console.log("Server UP at 8081");
 });

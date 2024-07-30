@@ -1,0 +1,11 @@
+const express = require("express");
+const app = express.Router();
+const {getAllUser, getUserById, addNewUser, updateUser, deleteUser, getSubscriptionDetailsById} = require("../controllers/userController");
+const {bookModel, userModel} = require("../modals/index");
+app.get("/", getAllUser);
+app.get("/:id", getUserById);
+app.post("/addUser", addNewUser);
+app.put("/updateUser/:id", updateUser);
+app.delete("/:id", deleteUser);
+app.get("/subscriptionDetails/:id", getSubscriptionDetailsById);
+module.exports = app;
